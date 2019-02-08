@@ -1,0 +1,122 @@
+body{
+  background-color: #ddd;
+}
+/** Container */
+.container {
+  padding: 16px;
+  width: 80%;
+  margin: auto;
+}
+
+/** Material Icons */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+
+/** Clear Fix Hack */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/** Input Form */
+.input-form form{
+   width: 60%;
+   margin: auto;
+   border: 0.5px solid black;
+   box-shadow: 5px 10px #888888;
+   overflow: hidden;
+   border-radius: 5px;
+}
+
+.input-form input{
+  box-sizing: border-box;
+
+}
+
+.input-form .title-bar{
+  position: relative;
+}
+
+.title-bar button{
+  position: absolute;right: 0; 
+  top: 0; 
+  margin: 0; 
+  margin-right: 8px;
+}
+
+.input-form input[type="text"]{
+  padding: 16px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.input-form input[type="submit"],
+.input-form button{
+  padding: 16px;
+  background: none;
+  border: none;
+  margin: 8px;
+}
+
+.input-form button{
+  float: left;
+}
+
+.input-form input[type="submit"]{
+  font-size: 16px;
+  float: right;
+}
+
+.input-form input[type="submit"]:hover,
+.input-form button:hover{
+  background: grey;
+}
+
+
+
+/** Notes Boxes */
+.notes{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  justify-content: space-around;
+}
+
+.box {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  flex-basis : 24%;
+  min-height: 120px;
+  padding: 16px;
+  margin: 4px;
+  background-color: #ddd;
+}
+
+.noteBtn {
+  position: absolute;
+  margin : 8px;
+  padding: 8px;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.noteBtn:hover {
+  background-color: #ddd;
+}
+
+.labelBox {
+  display: inline-block;
+  padding: 0 8px;
+  font-size: 12px;
+  background-color: #eee;
+  border-radius: 8px;
+  margin-right: 4px;
+}

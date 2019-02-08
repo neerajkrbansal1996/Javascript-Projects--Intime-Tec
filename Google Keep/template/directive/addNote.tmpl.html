@@ -1,0 +1,19 @@
+<div class="input-form">
+        <form>
+          <div class="title-bar">
+            <input type="text" name="title" ng-model="title" placeholder="Title">
+            <button><i class="material-icons md-24">bookmark</i></button>
+          </div>
+          <input type="text" name="desc" ng-model="desc" placeholder="Take a note...">
+          <div class="bottom-bar clear-fix">
+            <button name="reminderBtn" ng-click=""><i class="material-icons md-18">add_alert</i></button>
+            <button name="reminderBtn" ng-click="showLabel()" value="Label"><i class="material-icons md-18">label</i></button>
+            <button name="colorBtn" ng-click="showColor()"><i class="material-icons md-18">color_lens</i></button>
+
+            <button name="colorBtn" ng-click=""><i class="material-icons md-18">image</i></button>
+            <button name="colorBtn" ng-click=""><i class="material-icons md-18">archive</i></button>
+            <button name="colorBtn" ng-click=""><i class="material-icons md-18">more_vert</i></button>
+            <input type="submit" name="submit" ng-click="save()" value="Save">
+          </div>
+        </form>
+</div>

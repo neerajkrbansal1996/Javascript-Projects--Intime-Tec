@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Google Keep</title>
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Scripts for this template -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
+    <!-- Objects & Classes -->
+    <script type="text/javascript"src="js/notes.js"></script>
+    <script type="text/javascript"src="js/colors.js"></script>
+    <script type="text/javascript"src="js/labels.js"></script>
+
+    <!-- Angular App -->
+    <script type="text/javascript"src="js/myApp.js"></script>
+    
+    <!-- Controllers -->
+    <script type="text/javascript"src="js/Controller/NotesController.js"></script>
+    <script type="text/javascript"src="js/Controller/NoteController.js"></script>
+    <script type="text/javascript"src="js/Controller/LabelController.js"></script>
+    <script type="text/javascript"src="js/Controller/ColorsController.js"></script>
+
+    <!-- Directives -->
+    <script type="text/javascript"src="js/Directive/addNote.js"></script>
+    <script type="text/javascript"src="js/Directive/note.js"></script>
+
+    <!-- Services -->
+    <script type="text/javascript"src="js/Services/showLabelService.js"></script>
+    <script type="text/javascript"src="js/Services/showColorService.js"></script>
+    <script type="text/javascript"src="js/Services/showNoteService.js"></script>
+
+
+  </head>
+
+  <body >
+
+    <div class="container" ng-controller="NotesController">
+      <add-note title="note.title" desc="note.desc" show-label="showLabelSelector($event)" show-color="showColorsSelector($event)" save="addNote()"></add-note>
+
+    <div class="notes">
+      <div ng-repeat="data in notes" class="box" style="background-color: {{data.color}}">
+        <note note="data" show-note="showNoteModal($event,data)"></note>
+      </div>
+    </div>
+      
+    </div>
+
+
+    
+  </body>
+
+</html>
