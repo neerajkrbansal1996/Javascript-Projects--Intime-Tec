@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ecommerce App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+     <div id="loginPage" class="loginPage" style="display: block;">
+      <div class="container">
+        <form action="#" method="get">
+        <h4>Login </h4> </br>
+        <p5>Email adress: </p5>
+        <input type="text" id="username"> </br> </br>
+        <p6>Password: </p6>
+        <input type="password" id="password"> </br>
+        <button class="btn btn-primary" onclick="loginFunction()">Login</button>
+        </form>
+      </div>
+      </div>
+
+    <div id="loggedInPage" class="loggedInPage" style="display: none;">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ecommerce App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>  
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Profile
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li id="loggedUserName"><a href="#">Welcome!</a></li>
+                <li id="logoutBtn" onclick="logoutFunction()"><a href="#">Logout</a></li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header -->
+      <header class="jumbotron my-4" id="jumbotron">
+        <h1 class="display-3">A Warm Welcome!</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+      </header>
+
+      <div class="mainPage" id="mainPage">
+            <div class="mainWrap">
+                <div class="sidebarWrap">
+                    <div class="text-center">
+                      <h1 >Filter</h1>
+                      <h4>Author</h4>
+                      <div id="author-filter" class="author-filter">
+                          <!-- <div class="checkbox">
+                              <label><input type="checkbox" value="">Option 1</label>
+                          </div>
+                          <div class="checkbox">
+                              <label><input type="checkbox" value="">Option 2</label>
+                          </div> -->
+                      </div>
+                      <h4>Pages</h4>
+                      <div id="pages-filter" class="pages-filter">
+                      </div>
+                    </div>
+                </div>
+                <div class="productWrap">
+                    <!-- Search Box -->
+                 <!--  <div id="myInput" class="searchBox">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search this site...">
+                        <div class="input-group-append">
+                        <button class="btn btn-secondary" id="searchBtn" type="button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- End Of Search Box -->
+
+                  <!-- Products List -->
+                  <div id="productsList" class="productsList">
+                  </div>
+                  <!-- End Of Products List -->
+                  <!-- <div class="row text-center">
+
+                    <div class="col-lg-3 col-md-6 mb-4">
+                      <div class="card">
+                        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card-body">
+                          <h4 class="card-title" ">Card title</h4>
+                        </div>
+                        <div class="card-footer">
+                          <a href="#" class="btn btn-primary">Find Out More!</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  -->
+
+                    <!-- Page Navigation -->
+                  <nav aria-label="Page navigation example center">
+                     <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item"><a class="page-link" target="_self" onclick="initializeProducts(1)">1</a></li>
+                      <li class="page-item"><a class="page-link" target="_self" onclick="initializeProducts(2)">2</a></li>
+                      <li class="page-item"><a class="page-link" target="_self" onclick="initializeProducts(3)">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+                   <!-- End Of Page Navigation -->
+                </div>   
+            </div>
+          </div>
+      <div class="productPage" id="productPage" style="display: none">
+          <div class="panel-body">
+              <div class="row">
+                <div class="col-lg-4">
+                    <div class="img-details">
+                        <img src="https://i.ibb.co/2Y76nkY/Mage-s-book-detail.png" alt="">
+                    </div>
+                    <div class="img-list">
+                      <a href="#">
+                        <img src="https://i.ibb.co/2Y76nkY/Mage-s-book-detail.png" alt="">
+                      </a>
+                    <a href="#">
+                        <img src="https://i.ibb.co/2Y76nkY/Mage-s-book-detail.png" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://i.ibb.co/2Y76nkY/Mage-s-book-detail.png" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="https://i.ibb.co/2Y76nkY/Mage-s-book-detail.png" alt="">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-7">
+                  <h4 id="product-title">                    
+                        Leopard Shirt Dress
+                  </h4>
+                  <p id="product-description">
+                     Praesent ac condimentum felis. Nulla at nisl orci, at dignissim dolor, The best product descriptions address your ideal buyer directly and personally. The best product descriptions address your ideal buyer directly and personally.
+                  </p>
+                  <div class="product_meta">
+                      <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">Jackets</a>, <a rel="tag" href="#">Men</a>, <a rel="tag" href="#">Shirts</a>, <a rel="tag" href="#">T-shirt</a>.</span>
+                      <span class="tagged_as"><strong>Tags:</strong> <a rel="tag" href="#">mens</a>, <a rel="tag" href="#">womens</a>.</span>
+                          </div>
+                      <div > <strong>Author : </strong> <span id="product-author"></span></div>
+                      <div > <strong>Publisher : </strong> <span id="product-publisher"></span></div>
+                      <div > <strong>Published : </strong> <span id="product-published"></span></div>
+                      
+                      <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="quantiy" placeholder="1" class="form-control quantity">
+                      </div>
+                      <p>
+                      <button class="btn btn-round btn-danger" type="button">Add to Cart</button>
+                      <button class="btn btn-round btn-danger" type="button" onclick="toggleElements()">Back to main page</button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+          </div>        
+        </div>
+      </div>
+
+    
+      <!-- /.row -->
+
+      </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+      <footer class="py-5 bg-dark" id="footer" style="display: none">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      </div>
+      <!-- /.container -->
+      </footer>
+  </div>
+    <!-- Bootstrap core JavaScript -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"src="js/script.js"></script>
+
+
+
+  </body>
+
+</html>

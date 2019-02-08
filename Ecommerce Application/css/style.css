@@ -1,0 +1,107 @@
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+.padding-about {padding:60px 0px 60px 0px;}
+.gray-bg {background: #F1F1F1 !important;}
+.about-title {}
+.about-title h1 {color: #535353; font-size:45px;font-weight:600;}
+.about-title span {color: #AF0808; font-size:45px;font-weight:700;}
+.about-title h3 {color: #535353; font-size:23px;margin-bottom:24px;}
+.about-title p {color: #7a7a7a;line-height: 1.8;margin: 0 0 15px;}
+.about-paddingB {padding-bottom: 12px;}
+.about-img {padding-left: 57px;}
+
+.searchBox{
+	margin-bottom: 10px;
+}
+
+/* Product Detail Page */
+
+.panel-body { 
+	margin: 20px 0px;
+ }
+
+ .img-list {
+ 	margin-top: 10px;
+ }
+
+ .card-body {
+ 	padding: 8px;
+ 	margin-bottom: 0px;
+ }
+
+ .img-details img{
+ 	width: 100%;
+ }
+
+ .img-list img{
+ 	width: 80px;
+ }
+
+ .loginPage {
+ 	margin-top: 50px;
+ }
+
+
+
+ /** FlexBox Code **/
+@media (min-width: 768px) {
+  .mainWrap {
+ 	display: flex;
+ }
+ .sidebarWrap {
+ 	flex : 3;
+ 	margin-right: 16px;
+ }
+
+}
+
+.productsList {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+
+}
+.sidebarWrap {
+ 	border: 1px #eee solid;
+ }
+
+
+
+.product-card {
+	flex-basis: 25%;
+}
+
+
+ .productWrap {
+ 	flex : 9;
+ }
+
+ @media all and (max-width: 992px) {
+  .product-card {
+	flex-basis: 50%;
+	}
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .productsList {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+.pagination {
+	margin-top: 16px;
+}
