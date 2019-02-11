@@ -5,7 +5,7 @@ angular.module('myApp').factory('showLabelService', ['$mdDialog', function($mdDi
 		return $mdDialog.show({
 	      locals : {labels : labels},
 	      controller: 'LabelController',
-	      templateUrl: './template/label.tmpl.html',
+	      templateUrl: './template/modal/label.tmpl.html',
 	      parent: angular.element(document.body),
 	      targetEvent: ev,
 	      clickOutsideToClose:true,

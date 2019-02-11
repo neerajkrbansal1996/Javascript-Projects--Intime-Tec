@@ -1,11 +1,11 @@
 angular.module('myApp').factory('showColorService', ['$mdDialog', function($mdDialog){
 	var factory = {};
 
-	factory.showColorsSelector = function(ev, color){
+	factory.showColorsSelector = function(ev, object){
 		return $mdDialog.show({
-	      locals : {color : color},
+	      locals : {note : object},
 	      controller: 'ColorsController',
-	      templateUrl: './template/color.tmpl.html',
+	      templateUrl: './template/modal/color.tmpl.html',
 	      parent: angular.element(document.body),
 	      targetEvent: ev,
 	      clickOutsideToClose:true,

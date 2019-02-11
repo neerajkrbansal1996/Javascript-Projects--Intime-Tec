@@ -1,5 +1,6 @@
 <div>
   <button class="noteBtn" ng-click="showNote()"><i class="material-icons md-18">edit</i></button>
+  <button class="deleteBtn" ng-click="deleteNote()"><i class="material-icons md-18">delete</i></button>
   <p>{{note.title}}</p>
   <p>{{note.desc}}</p>
   <div class="labelBox" ng-repeat="label in note.labels">

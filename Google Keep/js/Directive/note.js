@@ -5,7 +5,8 @@ angular.module('myApp').directive('note', function(){
 		templateUrl : './template/directive/note.tmpl.html',
 		scope : {
 			note : "=",
-			showNote : "&"
+			showNote : "&",
+			deleteNote : "&"
 		}
 	}
 });

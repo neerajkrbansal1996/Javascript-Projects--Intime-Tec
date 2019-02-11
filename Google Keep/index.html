@@ -18,9 +18,11 @@
 
     <!-- Custom Scripts for this template -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
 
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
@@ -38,6 +40,7 @@
     <script type="text/javascript"src="js/Controller/NoteController.js"></script>
     <script type="text/javascript"src="js/Controller/LabelController.js"></script>
     <script type="text/javascript"src="js/Controller/ColorsController.js"></script>
+    <script type="text/javascript"src="js/Controller/SidebarController.js"></script>
 
     <!-- Directives -->
     <script type="text/javascript"src="js/Directive/addNote.js"></script>
@@ -53,19 +56,22 @@
 
   <body >
 
-    <div class="container" ng-controller="NotesController">
-      <add-note title="note.title" desc="note.desc" show-label="showLabelSelector($event)" show-color="showColorsSelector($event)" save="addNote()"></add-note>
-
-    <div class="notes">
-      <div ng-repeat="data in notes" class="box" style="background-color: {{data.color}}">
-        <note note="data" show-note="showNoteModal($event,data)"></note>
+    <div class="sidenav" ng-controller="SidebarController">
+      <a href="#!notes">Notes</a>
+      <a href="#!reminders">Reminders</a>
+      <hr>
+      <h2>Labels</h2>
+      <div class="sidebarItem">
+        <a ng-repeat="label in labels" href="#!notes/labelled/{{label}}" class="sidebarItemChild">{{label}}</a>
+        <a>Edit Labels</a>
       </div>
-    </div>
-      
+      <hr>
+      <a href="#!archive">Archive</a>
+      <a href="#!contact">Trash</a>
     </div>
 
+    <ng-view></ng-view>
 
-    
   </body>
 
 </html>

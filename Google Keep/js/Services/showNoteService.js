@@ -5,7 +5,7 @@ angular.module('myApp').factory('showNoteService', ['$mdDialog', function($mdDia
 		return $mdDialog.show({
 	      locals : {data : note},
 	      controller: 'NoteController',
-	      templateUrl: './template/note.tmpl.html',
+	      templateUrl: './template/modal/note.tmpl.html',
 	      parent: angular.element(document.body),
 	      targetEvent: ev,
 	      clickOutsideToClose:true,

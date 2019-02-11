@@ -102,6 +102,16 @@ body{
   position: absolute;
   margin : 8px;
   padding: 8px;
+  right: 36px;
+  top: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.deleteBtn {
+  position: absolute;
+  margin : 8px;
+  padding: 8px;
   right: 0;
   top: 0;
   background-color: transparent;
@@ -112,6 +122,10 @@ body{
   background-color: #ddd;
 }
 
+.deleteBtn:hover {
+  background-color: #ddd;
+}
+
 .labelBox {
   display: inline-block;
   padding: 0 8px;
@@ -119,4 +133,46 @@ body{
   background-color: #eee;
   border-radius: 8px;
   margin-right: 4px;
+}
+
+/** Sidebar Navigation */
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+  padding: 10px 10px;
+}
+
+.sidenav h2{
+  color: white;
+  padding-left: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

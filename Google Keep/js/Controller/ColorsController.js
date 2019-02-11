@@ -1,6 +1,6 @@
-angular.module('myApp').controller('ColorsController', ['$scope', '$mdDialog' ,'color', function($scope, $mdDialog, color){
+angular.module('myApp').controller('ColorsController', ['$scope', '$mdDialog' ,'note', function($scope, $mdDialog, note){
 
-    $scope.selectedColor = color;
+    $scope.localNote = note;
     $scope.colors = Colors;
 
     $scope.hide = function() {

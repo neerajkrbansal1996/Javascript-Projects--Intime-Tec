@@ -1,19 +1,19 @@
 <div class="input-form">
-        <form>
+        <form name="addNoteForm">
           <div class="title-bar">
-            <input type="text" name="title" ng-model="title" placeholder="Title">
+            <input type="text" name="title" ng-model="title" placeholder="Title" >
             <button><i class="material-icons md-24">bookmark</i></button>
           </div>
-          <input type="text" name="desc" ng-model="desc" placeholder="Take a note...">
+          <input type="text"  name="desc" ng-model="desc" placeholder="Take a note..." >
           <div class="bottom-bar clear-fix">
             <button name="reminderBtn" ng-click=""><i class="material-icons md-18">add_alert</i></button>
-            <button name="reminderBtn" ng-click="showLabel()" value="Label"><i class="material-icons md-18">label</i></button>
+            <button name="labelBtn" ng-click="showLabel()" value="Label"><i class="material-icons md-18">label</i></button>
             <button name="colorBtn" ng-click="showColor()"><i class="material-icons md-18">color_lens</i></button>
 
-            <button name="colorBtn" ng-click=""><i class="material-icons md-18">image</i></button>
-            <button name="colorBtn" ng-click=""><i class="material-icons md-18">archive</i></button>
-            <button name="colorBtn" ng-click=""><i class="material-icons md-18">more_vert</i></button>
-            <input type="submit" name="submit" ng-click="save()" value="Save">
+            <button name="imageBtn" ng-click=""><i class="material-icons md-18">image</i></button>
+            <button name="archiveBtn" ng-click=""><i class="material-icons md-18">archive</i></button>
+            <button name="moreBtn" ng-click=""><i class="material-icons md-18">more_vert</i></button>
+            <input type="submit" name="submit" ng-disabled="addNoteForm.$invalid" ng-click="save()" value="Save">
           </div>
         </form>
 </div>

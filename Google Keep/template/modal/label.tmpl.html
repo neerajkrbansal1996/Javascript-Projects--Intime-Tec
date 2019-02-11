@@ -1,0 +1,28 @@
+<md-dialog>
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Select Label</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+       <h3>Select Your Label Here</h3>
+       <div ng-repeat="label in labels">
+        <md-checkbox ng-checked="exists(label, selected)" ng-click="toggle(label, selected)">
+           {{ label }}
+        </md-checkbox>
+       </div>
+      </div>
+    </md-dialog-content>
+  
+    <md-dialog-actions>
+     
+      <md-button ng-click="answer(selected)">
+       Done
+      </md-button>
+      
+    </md-dialog-actions>
+  </form>
+</md-dialog>

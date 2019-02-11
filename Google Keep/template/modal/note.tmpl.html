@@ -1,0 +1,55 @@
+  <md-content layout-padding>
+      <form name="userForm">
+
+        <md-input-container class="md-block">
+          <label>Title</label>
+          <input ng-model="note.title">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Description</label>
+          <textarea ng-model="note.desc" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+        </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Color</label>
+            <md-select ng-model="note.color">
+              <md-option ng-repeat="(color, value) in colors" value="{{value}}">
+                {{color}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+         
+ 			 
+          <!-- <md-input-container class="md-block" flex-gt-sm>
+            <label>Labels</label>
+            <md-select ng-model="note.label">
+              <md-option ng-repeat="label in labels" value="{{label}}">
+                {{label}}
+              </md-option>
+            </md-select>
+          </md-input-container> -->
+
+         <h3>Select Your Label Here</h3>
+          <div ng-repeat="label in labels">
+            <md-checkbox ng-checked="exists(label, note.labels)" ng-click="toggle(label, note.labels)">
+               {{ label }}
+            </md-checkbox>
+          </div>
+       <!--  <md-button ng-click="showLabelSelector($event)">
+         Label
+        </md-button> -->
+
+        <md-dialog-actions>
+     
+	      <md-button ng-click="answer(note)">
+	       Done
+	      </md-button>
+	      
+	    </md-dialog-actions>
+
+      </form>
+  </md-content>
+
+

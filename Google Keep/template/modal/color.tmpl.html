@@ -1,0 +1,30 @@
+<md-dialog>
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Select Color</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h3>Select Your Color Here</h3>
+        <md-radio-group ng-model="localNote.color">
+       <div ng-repeat="(color,value) in colors">
+        <md-radio-button value="{{value}}">
+           {{ color }}
+        </md-radio-button>
+       </div>
+       </md-radio-group>
+      </div>
+    </md-dialog-content>
+  
+    <md-dialog-actions layout="row">
+     
+      <md-button ng-click="answer(selectedColor)">
+       Done
+      </md-button>
+      
+    </md-dialog-actions>
+  </form>
+</md-dialog>
