@@ -3,9 +3,9 @@
       <add-note title="note.title" desc="note.desc" show-label="showLabelSelector($event)" show-color="showColorsSelector($event)" save="addNote()"></add-note>
 
       <div class="notes">
-        <div ng-repeat="data in notes | filter : params" class="box" style="background-color: {{data.color}}">
+        <div ng-repeat="data in notes | notesFilter:params" class="box" style="background-color: {{data.color}}">
           <note note="data" show-note="showNoteModal($event,data)" delete-note="deleteNote(data)"></note>
         </div>
       </div>
-      
-    </div>
+
+</div>

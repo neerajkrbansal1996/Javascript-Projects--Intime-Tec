@@ -30,26 +30,32 @@
     <!-- Objects & Classes -->
     <script type="text/javascript"src="js/notes.js"></script>
     <script type="text/javascript"src="js/colors.js"></script>
-    <script type="text/javascript"src="js/labels.js"></script>
 
     <!-- Angular App -->
     <script type="text/javascript"src="js/myApp.js"></script>
     
+     <!-- Services -->
+    <script type="text/javascript"src="js/Services/showLabelService.js"></script>
+    <script type="text/javascript"src="js/Services/showColorService.js"></script>
+    <script type="text/javascript"src="js/Services/showNoteService.js"></script>
+    <script type="text/javascript"src="js/Services/showEditLabelService.js"></script>
+    <script type="text/javascript"src="js/Services/labelsService.js"></script>
+
     <!-- Controllers -->
     <script type="text/javascript"src="js/Controller/NotesController.js"></script>
     <script type="text/javascript"src="js/Controller/NoteController.js"></script>
     <script type="text/javascript"src="js/Controller/LabelController.js"></script>
     <script type="text/javascript"src="js/Controller/ColorsController.js"></script>
     <script type="text/javascript"src="js/Controller/SidebarController.js"></script>
+    <script type="text/javascript"src="js/Controller/EditLabelController.js"></script>
 
     <!-- Directives -->
     <script type="text/javascript"src="js/Directive/addNote.js"></script>
     <script type="text/javascript"src="js/Directive/note.js"></script>
 
-    <!-- Services -->
-    <script type="text/javascript"src="js/Services/showLabelService.js"></script>
-    <script type="text/javascript"src="js/Services/showColorService.js"></script>
-    <script type="text/javascript"src="js/Services/showNoteService.js"></script>
+    <!-- Filters -->
+    <script type="text/javascript"src="js/Filters/notesFilter.js"></script>
+
 
 
   </head>
@@ -63,11 +69,11 @@
       <h2>Labels</h2>
       <div class="sidebarItem">
         <a ng-repeat="label in labels" href="#!notes/labelled/{{label}}" class="sidebarItemChild">{{label}}</a>
-        <a>Edit Labels</a>
+        <a ng-click="showEditLabelModal()">Edit Label</a>
       </div>
       <hr>
       <a href="#!archive">Archive</a>
-      <a href="#!contact">Trash</a>
+      <a href="#!trashed">Trash</a>
     </div>
 
     <ng-view></ng-view>

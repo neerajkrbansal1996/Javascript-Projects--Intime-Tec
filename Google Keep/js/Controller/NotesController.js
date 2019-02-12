@@ -6,10 +6,12 @@ angular.module('myApp').controller('NotesController', ['$scope','$mdDialog','sho
 	$scope.note.desc = "";
 	$scope.note.labels = [];
 	$scope.note.color = Colors.White;
-	$scope.params = $routeParams.label || "";
+	$scope.params = $routeParams.label || "";	
 	$scope.notes = $localStorage.notes || [];
-	
+	$scope.trashed = $localStorage.trashed || [];
+
 	$localStorage.notes = $scope.notes;
+	$localStorage.trashed = $scope.trashed;
 
 	if($routeParams.label){
 		$scope.note.labels.push($scope.params);
@@ -31,13 +33,23 @@ angular.module('myApp').controller('NotesController', ['$scope','$mdDialog','sho
             var idx = $scope.notes.indexOf(note);
 			if(idx > -1){
 				$scope.notes.splice(idx, 1);
-				console.log($scope.notes);
+				$scope.trashed.push(note);
+				console.log($scope.trashed);
 			}
         } else {
             console.log('You Clicked No!');
         }
+	}
 
-		
+	$scope.deleteFromTrash = function(note){
+		if ($window.confirm("Please confirm?")) {
+            var idx = $scope.trashed.indexOf(note);
+			if(idx > -1){
+				$scope.trashed.splice(idx, 1);
+			}
+        } else {
+            console.log('You Clicked No!');
+        }
 	}
 
 	function clear() {
@@ -72,6 +84,8 @@ angular.module('myApp').controller('NotesController', ['$scope','$mdDialog','sho
 	    	console.log("You Cancelled the dialog...");
 	    })
   	};
+
+  	
 
 
 }]);

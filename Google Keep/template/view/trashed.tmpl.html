@@ -1,0 +1,7 @@
+<div class="main">
+  <div class="notes">
+    <div ng-repeat="data in trashed" class="box" style="background-color: {{data.color}}">
+      <note note="data" show-note="showNoteModal($event,data)" delete-note="deleteFromTrash(data)"></note>
+    </div>
+  </div>
+</div>

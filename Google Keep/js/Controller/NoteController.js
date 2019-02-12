@@ -1,7 +1,7 @@
-angular.module('myApp').controller('NoteController', ['$scope', '$mdDialog' ,'data', 'showLabelService', function($scope, $mdDialog, data, showLabelService){
+angular.module('myApp').controller('NoteController', ['$scope', '$mdDialog' ,'data', 'showLabelService','LabelsService', function($scope, $mdDialog, data, showLabelService, LabelsService){
 	$scope.note = data;
 	$scope.colors = Colors;
-	$scope.labels = Labels;
+	$scope.labels = LabelsService.all();
 
 	$scope.toggle = function (label, list) {
         var idx = list.indexOf(label);

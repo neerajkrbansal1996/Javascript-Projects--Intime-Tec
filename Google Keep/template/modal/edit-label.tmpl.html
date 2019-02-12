@@ -1,0 +1,34 @@
+<md-dialog>
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Edit Labels</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <form>
+          <input type="text" name="label" ng-model="newLabel" placeholder="Create new label">
+          <button type="submit" ng-click="saveNewLabel()"><i class="material-icons md-18">check</i></button>         
+        </form>
+        <hr>
+       <div ng-repeat="label in labels">
+        <a style="display: inline-block;" ng-click="deleteLabel(label)"><i class="material-icons md-18">delete</i>
+        </a>
+        <p style="display: inline-block;" ng-checked="exists(label, selected)" ng-click="toggle(label, selected)">
+           {{ label }}
+        </p>
+       </div>
+      </div>
+    </md-dialog-content>
+  
+    <md-dialog-actions>
+     
+      <md-button ng-click="answer(selected)">
+       Done
+      </md-button>
+      
+    </md-dialog-actions>
+  </form>
+</md-dialog>

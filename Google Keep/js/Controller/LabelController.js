@@ -1,5 +1,5 @@
-angular.module('myApp').controller('LabelController', ['$scope', '$mdDialog', 'labels' , function($scope, $mdDialog, labels){
-      $scope.labels = Labels;
+angular.module('myApp').controller('LabelController', ['$scope', '$mdDialog', 'labels', 'LabelsService' , function($scope, $mdDialog, labels, LabelsService){
+      $scope.labels = LabelsService.all();
       $scope.selected = labels;
 
       $scope.toggle = function (label, list) {
