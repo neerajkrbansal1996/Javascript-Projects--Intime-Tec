@@ -13,14 +13,23 @@
           <button type="submit" ng-click="saveNewLabel()"><i class="material-icons md-18">check</i></button>         
         </form>
         <hr>
-       <div ng-repeat="label in labels">
+       <div ng-repeat="label in labels;">
         <a style="display: inline-block;" ng-click="deleteLabel(label)"><i class="material-icons md-18">delete</i>
         </a>
-        <p style="display: inline-block;" ng-checked="exists(label, selected)" ng-click="toggle(label, selected)">
-           {{ label }}
-        </p>
+        <div style="display: inline-block;" ng-hide="labelInput">
+          <p style="display: inline-block;">{{ label }}</p>
+          <button style="display: inline-block;" ng-click="toggleLabelInput()">
+            <i class="material-icons md-18">edit</i></button>
+        </div>
+        <div style="display: inline-block;" ng-show="labelInput">
+          <input style="display: inline-block;" type="text" name="editField" value="{{ label }}" ng-blur="saveEdit($event, $index)" >
+          <button style="display: inline-block;" ng-click="toggleLabelInput()">
+            <i class="material-icons md-18">check</i></button>
+        </div>
+        
+       
        </div>
-      </div>
+      </div>  
     </md-dialog-content>
   
     <md-dialog-actions>

@@ -56,24 +56,28 @@
     <!-- Filters -->
     <script type="text/javascript"src="js/Filters/notesFilter.js"></script>
 
-
+    <style>
+    .active {
+      background-color: red;
+    }
+  </style>
 
   </head>
 
   <body >
 
     <div class="sidenav" ng-controller="SidebarController">
-      <a href="#!notes">Notes</a>
-      <a href="#!reminders">Reminders</a>
+      <a  ng-class="{ active: isActive('/notes') }" href="#!notes">Notes</a>
+      <a ng-class="{ active: isActive('/reminders') }" href="#!reminders">Reminders</a>
       <hr>
       <h2>Labels</h2>
       <div class="sidebarItem">
-        <a ng-repeat="label in labels" href="#!notes/labelled/{{label}}" class="sidebarItemChild">{{label}}</a>
+        <a ng-repeat="label in labels" ng-class="{ active: isActive('/notes/labelled/' + label) }" href="#!notes/labelled/{{label}}" class="sidebarItemChild">{{label}}</a>
         <a ng-click="showEditLabelModal()">Edit Label</a>
       </div>
       <hr>
       <a href="#!archive">Archive</a>
-      <a href="#!trashed">Trash</a>
+      <a ng-class="{ active: isActive('/trashed') }" href="#!trashed">Trash</a>
     </div>
 
     <ng-view></ng-view>

@@ -8,6 +8,7 @@ body{
   margin: auto;
 }
 
+
 /** Material Icons */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -176,3 +177,4 @@ body{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+

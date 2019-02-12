@@ -8,7 +8,11 @@ angular.module('myApp').factory('LabelsService', ['$localStorage', function($loc
 			return labels;
 		},
 		add : function(label){
-			labels.push(label);
+			if(!labels.includes(label)){
+					labels.push(label);
+			}else{
+				alert('Label Already Exists');
+			}
 		},
 		remove : function(label){
 			labels.splice(labels.indexOf(label),1);

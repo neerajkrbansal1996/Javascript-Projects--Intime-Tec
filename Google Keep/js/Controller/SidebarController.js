@@ -1,4 +1,4 @@
-angular.module('myApp').controller('SidebarController', ['$scope','showEditLabelService', 'LabelsService', function($scope, showEditLabelService, LabelsService){
+angular.module('myApp').controller('SidebarController', ['$scope','showEditLabelService', 'LabelsService','$location', function($scope, showEditLabelService, LabelsService, $location){
 	$scope.labels = LabelsService.all();
 
 	$scope.showEditLabelModal = function(ev) {
@@ -8,4 +8,9 @@ angular.module('myApp').controller('SidebarController', ['$scope','showEditLabel
 	    	console.log("You Cancelled the dialog...");
 	    })
   	};
+
+  	$scope.isActive = function (viewLocation) {
+     var active = (viewLocation === $location.path());
+     return active;
+};
 }]);
