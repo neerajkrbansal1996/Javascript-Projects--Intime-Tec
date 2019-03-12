@@ -1,1 +1,1 @@
-# Javascript Projects (Intime Tec)
+# Javascript & AngularJS Projects
